@@ -11,5 +11,13 @@ router.post("/add", function (req, res) {
     res.json({total: total});
 });
 
+/* subtract */
+
+// router.post("/subtract", function(req, res) {
+//     let number1 = req.body.num1;
+//     let number2 = req.body.num2;
+
+//     let total = -number1 -
+// })
 
 module.exports = router;
