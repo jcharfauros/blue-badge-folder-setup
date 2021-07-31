@@ -1,0 +1,27 @@
+{
+    "bowlingLeague": [
+      {
+        "teamName": "Strike Tonight",
+        "players": [
+          { "name": "Jeff", "age": 35, "scores": [298, 277, 244] },
+          { "name": "Bob", "age": 45, "scores": [222, 245, 198] }
+        ]
+      },
+  
+      {
+        "teamName": "Curve Balls",
+        "players": [
+          { "name": "Ginger", "age": 32, "scores": [190, 135, 198] },
+          { "name": "Julie", "age": 21, "scores": [233, 155, 168] }
+        ]
+      },
+      {
+        "teamName": "Gutter Rollers",
+        "players": [
+          { "name": "George", "age": 65, "scores": [144, 98, 54] },
+          { "name": "Barb", "age": 77, "scores": [55, 35, 15] }
+        ]
+      }
+    ]
+  }
+  

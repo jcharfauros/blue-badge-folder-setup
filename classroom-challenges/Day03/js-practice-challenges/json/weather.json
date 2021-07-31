@@ -1,0 +1,39 @@
+{
+  "week": [
+    {
+      "day": "Monday",
+      "cloud-cover": "OVC",
+      "high": 70,
+      "low": 55,
+      "weather": "NA"
+    },
+    {
+      "day": "Tuesday",
+      "cloud-cover": "SKT",
+      "high": 77,
+      "low": 60,
+      "weather": "Wind Gusts - 20MPH"
+    },
+    {
+      "day": "Wednesday",
+      "cloud-cover": "CLR",
+      "high": 85,
+      "low": 70,
+      "weather": "Humid"
+    },
+    {
+      "day": "Thursday",
+      "cloud-cover": "OVC",
+      "high": 55,
+      "low": 45,
+      "weather": "Thunderstorms 100%"
+    },
+    {
+      "day": "Friday",
+      "cloud-cover": "OVC",
+      "high": 32,
+      "low": 15,
+      "weather": "Snow"
+    }
+  ]
+}
