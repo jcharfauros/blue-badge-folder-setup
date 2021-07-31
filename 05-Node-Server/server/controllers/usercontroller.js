@@ -3,15 +3,16 @@ const User = require('../db').import('../models/user');
 const jwt = require("jsonwebtoken");
 
 /* USER SIGNUP */
-router.post('/create', function(req, res) {
 
+router.post('/create', function(req, res) {
     User.create({
         email: req.body.user.email,
-        password: req.body.user.password
+        password: req.body.user.password,
     })
-        .then(
-            function createSuccess(user){
-                let token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60 * 60 * 24});
+        .then(function createSuccess(user){
+                // code for token creation //payload    //signature
+                // let token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60 * 60 * 24}); //OLD CODE
+                const token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24});
 
                 res.json({
                     user: user,
@@ -20,26 +21,33 @@ router.post('/create', function(req, res) {
                 });
             }
         )
-        .catch(err=> res.status(500).json({error: err}))
+        .catch(err=> res.status(500).json({error: err}));
 });
 
-/* USEAR SIGNIN */
+/* USER SIGNIN */
+
 router.post('/login', function(req, res) {
     User.findOne({
         where: {
-            email: req.body.user.email
+            email: req.body.user.email,
         }
     })
         .then(function loginSuccess(user) {
             if (user) {
+                //same as signup token, except for 200 msg
+                // let token = jwt.sign({id: user.id}, "i_am_secret", {expiresIn: 60 * 60 * 24}) //OLD CODE
+                const token = jwt.sign({id: user.id}, process.env.JWT_SECRET, {expiresIn: 60 * 60 * 24});
+
                 res.status(200).json({
-                    user: user            
+                    user: user,
+                    message: "User successfully logged in!",
+                    sessionToken: token            
             })
         }   else {
-        res.status(500).json({ error: 'User does not exist.'})        
+        res.status(500).json({ error: 'User does not exist.'});        
         }
     })
-    .catch(err => res.status(500).json({ error: err }))
+    .catch(err => res.status(500).json({ error: err }));
 });
 
 
