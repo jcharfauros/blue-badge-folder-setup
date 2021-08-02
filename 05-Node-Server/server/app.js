@@ -11,8 +11,14 @@ sequelize.sync();
 
 app.use(express.json());
 //tells the app that we want json to be used when request is processed
-
+/* exposed route */
 app.use('/user', user);
+
+/* protected route
+    We do want some info exposed to all users, so don't use this. Put this in the controller.
+// app.use(require('./middleware/validate-session')); 
+*/
+
 app.use('/journal', journal);
 
 app.listen(3000, function(){
