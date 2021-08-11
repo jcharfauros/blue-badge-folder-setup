@@ -13,7 +13,6 @@ app.use(express.json());
 
 app.use('/user', user);
 
-/* Protected route */
 app.use(require('./middleware/validate-session'));
 app.use('/log', log);
 
